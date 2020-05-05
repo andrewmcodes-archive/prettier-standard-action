@@ -1,0 +1,18 @@
+name: Run Prettier-Standard
+description: Run Prettier-Standard check on JavaScript files
+author: Andrew Mason <andrewmcodes@protonmail.com>
+inputs:
+  glob:
+    description: Glob of files to check
+    required: false
+    default: '.'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.glob }}
+  env:
+    NODE_VERSION: '13.11.0'
+branding:
+  icon: circle
+  color: purple
